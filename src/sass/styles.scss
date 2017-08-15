@@ -17,17 +17,7 @@ $max-laptop: "(max-width: 1140px)"; //xl
 $min-screen: "(min-width: 1140px)";
 $max-screen: "(max-width: 1980px)";
 $size-default: 18px;
-
-// bootstrap 4 
-//sm: 540px,
-//md: 720px,
-//lg: 960px,
-//xl: 1140px
-
 $dir: "../img/";
-
-//comandos sass
-// sass --watch style.scss:style.css
 
 // mixins
 @mixin borda-padrao ($raio: 0.3em){
@@ -37,8 +27,6 @@ $dir: "../img/";
 	-ms-border-radius: $raio;
 	border-radius: $raio;
 }
-// incluindo mixin
-// @include borda-padrao('10px');
 
 @mixin btn{
 	padding: 10px;
