@@ -10,7 +10,6 @@ $html = "<!DOCTYPE html>
 		</head>
 		<body>
 			teste - email
-
 		</body>
 		</html>";
 /**
@@ -42,16 +41,16 @@ $mail->SMTPSecure = 'ssl';
 //$mail->SMTPAuth = false;
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "cris@apeppers.com.br";
+$mail->Username = "";
 //Password to use for SMTP authentication
-$mail->Password = "cris890890";
+$mail->Password = "";
 //Set who the message is to be sent from
 //$mail->setFrom('from@example.com', 'First Last');
-$mail->setFrom('riglog@riglog.com', 'RigLog');
+$mail->setFrom('teste@teste.com', 'RigLog');
 //Set an alternative reply-to address
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
-$mail->addAddress('cris@apeppers.com.br', 'cris');
+$mail->addAddress('teste@teste.com.br', 'teste');
 //Set the subject line
 $mail->Subject = 'PHPMailer SMTP without auth test';
 //Read an HTML message body from an external file, convert referenced images to embedded,
