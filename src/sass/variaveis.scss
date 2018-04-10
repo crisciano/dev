@@ -1,0 +1,20 @@
+// variaveis
+$primary: #009843;
+$primary-darken: darken($primary, 25);
+$primary-lighten: lighten($primary, 25);
+$secondary: #f2f2f2;
+$secondary-darken: darken($secondary, 25);
+$secondary-lighten: lighten($secondary, 25);
+$branco: #fff;
+$preto: #000;
+$max-mobile: "(max-width: 425px)"; 	//sm
+$min-media: "(min-width: 425px)";
+$max-media: "(max-width: 720px)"; 	//md
+$min-tablet: "(min-width: 720px)";
+$max-tablet: "(max-width: 960px)"; 	//lg
+$min-laptop: "(min-width: 960px)";
+$max-laptop: "(max-width: 1140px)"; //xl
+$min-screen: "(min-width: 1140px)";
+$max-screen: "(max-width: 1980px)";
+$size-default: 18px;
+$dir: "../img/";

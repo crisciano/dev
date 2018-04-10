@@ -1,22 +1,95 @@
-@mixin lato-black() {
-  font-family: lato-black;
-}
-@mixin lato-regular() {
-  font-family: lato-regular;
+// mixins
+@mixin borda-padrao ($raio: 0.3em){
+	-webkit-border-radius: $raio;
+	-moz-border-radius: $raio;
+	-o-border-radius: $raio;
+	-ms-border-radius: $raio;
+	border-radius: $raio;
 }
 
-@mixin lato-bold() {
-  font-family: lato-bold;
-} 
-
-
-@mixin borda-arredondada($raio: 10px) {
-  -webkit-border-radius: $raio;
-  border-radius: $raio;
+@mixin btn{
+	padding: 10px;
+	text-decoration: none;
 }
- 
-@mixin sombra-padrao {
-  -webkit-box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+
+@mixin shadow($shadow: 0 2px 6.65px rgba(0,0,0,0.3)){
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	-ms-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin border($raio: 1em){
+	-webkit-border-radius: $raio;
+	-moz-border-radius: $raio;
+	-o-border-radius: $raio;
+	-ms-border-radius: $raio;
+	border-radius: $raio;
+}
+
+@mixin bg($dir, $url) {
+	background: url($dir+$url);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	position: relative;
+}
+
+@mixin transform($effect) {
+	-webkit-transform: $effect;
+	-ms-transform: $effect;   
+	-moz-transform: $effect;
+	transform: $effect;
+}
+
+@mixin transition($effect) {
+	-webkit-transition: $effect;
+	-ms-transition: $effect;
+	-moz-transition: $effect;
+	transition: $effect;
+}
+
+@mixin rotate($grau) {
+	-webkit-transform: rotate($grau);
+	-ms-transform: rotate($grau);   
+	-moz-transform: rotate($grau);
+	transform: rotate($grau);
+}
+
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder {color: $color; }
+	&::-moz-placeholder { color: $color;}
+	&:-ms-input-placeholder { color: $color; }
+	&:-moz-placeholder {color: $color; }
+}
+
+%bg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+}
+
+//placeholder
+%shadow {
+	-webkit-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	-o-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	-ms-box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+	box-shadow: 0 2px 6.65px rgba(0,0,0,0.3);
+}
+
+// function
+@function multiplicador($multiplicador) {
+	@return $multiplicador * $size-default;
+}
+@function divisor($divisor) {
+	@return $divisor / $size-default;
+}
+@function soma($soma) {
+	@return $soma + $size-default;
+}
+@function subtracao($subtrair) {
+	@return $subtrair - $size-default;
 }
 

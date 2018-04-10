@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="example">
   	<meta name="keywords" content="example">
 	<meta http-equiv="Content-Language" content="pt-br">
@@ -86,20 +86,41 @@
 		</div>
 	</section>
 
-	<!-- contatos  -->
-	<section id="contatos">
+	<!-- slide -->
+	<section id="slide">
 		<div class="container">
 			<div class="row">
-				
-			</div>
-		</div>
-	</section>
-
-	<!--  produtos  -->
-	<section id="produtos">
-		<div class="container">
-			<div class="row">
-				
+				<div class="col-12 text-center">
+					<h2 class="text-uppercase">slide</h2>
+				</div>
+				<div class="col-12 pl-0 pr-0">
+					<div class="swiper-container pb-lg-5" id="slideDepoimentos">
+						<div class="swiper-wrapper">
+						  	<div class="swiper-slide d-flex align-items-center">
+						  		slide 1
+						  	</div>
+						  	<div class="swiper-slide d-flex align-items-center">
+						  		slide 2
+						  	</div>
+						  	<div class="swiper-slide d-flex align-items-center">
+						  		slide 3
+						  	</div>
+						  	<div class="swiper-slide d-flex align-items-center">
+						  		slide 4
+						  	</div>
+						  	<div class="swiper-slide d-flex align-items-center">
+						  		slide 5
+						  	</div>
+						</div>
+						<!-- Add Pagination -->
+    					<div class="swiper-pagination-mb"></div>
+						<!-- Add Arrows -->
+					    <!-- <div class="swiper-button-next"></div>
+					    <div class="swiper-button-prev"></div> -->
+						<!-- Add Pagination -->
+		    			<div class="swiper-pagination" id="slideDepoimentosPagination"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -147,9 +168,10 @@
 	    <script src="js/tether.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.mask.min.js"></script>
-		<!-- <script src="js/swiper.min.js"></script> -->
 		<script src="js/scroll.js"></script>
 		<script src="js/scripts.js"></script>
     <!-- endbuild -->
+		<script src="js/swiper.min.js"></script>
+		<script src="js/iniciaSlide.js"></script>
 </body>
 </html>
