@@ -1,5 +1,5 @@
 $(function() {
-    $('#phone').mask("(99) 9999-99999");
+    $("input[type=tel]").mask("(99) 9999-99999");
     slide();
 });
 // Video Modals
