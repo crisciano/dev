@@ -1,4 +1,26 @@
-// mixins
+/** mixins  **/
+
+@mixin d-flex{
+	display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+@mixin align-items-center{
+	-webkit-box-align: center !important;
+    -webkit-align-items: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+@mixin justify-content-center {
+	-webkit-box-pack: center !important;
+    -webkit-justify-content: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;	
+}
+
 @mixin borda-padrao ($raio: 0.3em){
 	-webkit-border-radius: $raio;
 	-moz-border-radius: $raio;
