@@ -31,7 +31,7 @@ let pass          = '';                   /* pass para o ftp */
 let dirDist       = '/public_html/dist';  /* dir de teste*/
 let dirPublic     = '/public_html';       /*dir de dev */
 
-gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'build-img'], function() {
+gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'copyJs', 'copyScss', 'build-img'], function() {
 	//gulp.start('build-img');
 });
 
@@ -55,6 +55,16 @@ gulp.task('copyVideo',function(){
         .pipe(gulp.dest('dist/video'));
 });
 
+gulp.task('copyJs',function(){
+  return gulp.src('src/js/**/*')
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('copyScss',function(){
+  return gulp.src('src/sass/**/*')
+        .pipe(gulp.dest('dist/sass'));
+});
+
 gulp.task('clean', function() {
 	return gulp.src('dist')
 		.pipe(clean());
@@ -62,7 +72,7 @@ gulp.task('clean', function() {
 
 gulp.task('build-img', function() {
 
-  return gulp.src('src/img/*')
+  return gulp.src('src/img/**/*')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [
