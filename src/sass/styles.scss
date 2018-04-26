@@ -1,3 +1,6 @@
+@import "variaveis";
+@import "mixins";
+
 /* nav */
 #nav{
 	h5{margin-bottom: 0}
@@ -45,6 +48,97 @@
     .play-button { border: solid 3px #fff; width: 120px; height: 120px; position: absolute; top: 45%; left: 45%; z-index: 4; border-radius: 50%; @include transition(all .3s ease); cursor: pointer; }
 	.play-button:before { opacity: .6; right: 0; left: 36%; top: 24%; bottom: 0; position: absolute; width: 0; height: 0; border-style: solid; border-width: 30px 0 30px 50px; border-color: transparent transparent transparent #fff; }
 	.play-button.large:before, .play-button.video-playing:after, .play-button:before { content: ''; }
+}
+
+#slide{
+
+	.swiper-container {
+	  width: 100%;
+	  height: 100%;
+	}
+	.swiper-pagination-bullet {
+	    opacity: .5;
+	}
+
+	.swiper-slide {
+	  // text-align: center;
+	  font-size: 18px;
+	  // background: red;
+	  /* Center slide text vertically */
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  -webkit-justify-content: center;
+	  justify-content: center;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  -webkit-align-items: center;
+	  align-items: center;
+	}
+}
+
+#slide-2{
+	.swiper-container {
+	  width: 100%;
+	  height: 100%;
+	}
+	.swiper-pagination-bullet {
+	    opacity: .5;
+	}
+
+	.swiper-slide {
+	  font-size: 18px;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  -webkit-justify-content: center;
+	  justify-content: center;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  -webkit-align-items: center;
+	  align-items: center;
+	}
+	#gallery-thumbs{
+	    max-height: 300px;
+	    box-sizing: border-box;
+	    padding: 10px 0;
+		.swiper-slide {
+		    width: 25%;
+		    height: 100%;
+		    opacity: 0.4;
+	        background-size: cover;
+			background-position: center;
+		}
+		.swiper-slide-active {
+		    opacity: 1;
+		}
+	}
+	.swiper-container {
+	    width: 100%;
+	    height: 300px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+	#gallery-top{
+	    height: auto;
+	    width: 100%;
+		.swiper-slide {
+		    background-size: cover;
+		    background-position: center;
+		    height: 700px;
+		}
+	}
+	.swiper-wrapper {
+	    @media(max-width: 543px) {
+	        height: 300px !important;
+	    }
+	}
 }
 
 /** contato */
@@ -278,32 +372,4 @@ footer{
     	padding: 80px 0;
 		div{    margin-bottom: 10px;}
 	}
-}
-
-
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-.swiper-pagination-bullet {
-    opacity: .5;
-}
-
-.swiper-slide {
-  // text-align: center;
-  font-size: 18px;
-  // background: red;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
 }

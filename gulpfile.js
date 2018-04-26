@@ -146,6 +146,18 @@ gulp.task('deployPublic', ['default'], function () {
    .pipe(gutil.noop());
 });
 
+var customReporter = function(file) {
+  var report = "";
+  report = `${file.csslint.errorCount} erro no arquivo ${file.path} \r\n`;
+
+  file.csslint.results.forEach(function(result) {
+    // Msg += result.error.message  + " on line "  + result.error.line + "\r\n";
+    report = `${result.error.message} na linha ${result.error.line} \r\n`;
+  });
+
+  // require('fs').appendFileSync('cssErrors.txt', report); 
+};
+
 //server
 gulp.task('server', function() {
     connect.server();
@@ -169,7 +181,7 @@ gulp.task('server', function() {
         console.log("Linting " + event.path);
         gulp.src(event.path)
             .pipe(csslint())
-            .pipe(csslint.reporter());            
+            .pipe(csslint.reporter(customReporter));            
     }); 
 
     gulp.watch('src/img/**/*').on('change', function(event) {

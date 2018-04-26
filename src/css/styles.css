@@ -1,63 +1,5 @@
 @charset "UTF-8";
-/* padrao  */
-section {
-  padding: 80px 0; }
-
-.img-responsive-center {
-  margin: 0 auto; }
-
-.wd-100 {
-  width: 100%; }
-
-h1, h2, h3, h4, h5, p, a, span, label {
-  font-family: 'Open Sans', sans-serif; }
-  h1.light, h2.light, h3.light, h4.light, h5.light, p.light, a.light, span.light, label.light {
-    font-weight: 300; }
-  h1.regular, h2.regular, h3.regular, h4.regular, h5.regular, p.regular, a.regular, span.regular, label.regular {
-    font-weight: 400; }
-  h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, p.bold, a.bold, span.bold, label.bold {
-    font-weight: 700; }
-  h1.extra, h2.extra, h3.extra, h4.extra, h5.extra, p.extra, a.extra, span.extra, label.extra {
-    font-weight: 800; }
-
-a {
-  color: #009843; }
-
-a:hover {
-  color: #19ff7e; }
-
-.relative {
-  position: relative; }
-
-.none {
-  display: none; }
-
-.block {
-  display: block; }
-
-.hidden {
-  visibility: hidden; }
-
-button {
-  cursor: pointer; }
-
-/*remove box-shadow input*/
-input[type=text], input[type=tel], input[type=email], textarea, button, .btn:focus, .btn.focus, .btn-primary:focus, .btn-primary.focus {
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
-
-/* custom css */
-.overlay:after {
-  background: rgba(0, 152, 67, 0.5);
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
+/** mixins  **/
 /* nav */
 #nav h5 {
   margin-bottom: 0; }
@@ -155,6 +97,82 @@ input[type=text], input[type=tel], input[type=email], textarea, button, .btn:foc
     border-color: transparent transparent transparent #fff; }
   #video .play-button.large:before, #video .play-button.video-playing:after, #video .play-button:before {
     content: ''; }
+
+#slide .swiper-container {
+  width: 100%;
+  height: 100%; }
+
+#slide .swiper-pagination-bullet {
+  opacity: .5; }
+
+#slide .swiper-slide {
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
+#slide-2 .swiper-container {
+  width: 100%;
+  height: 100%; }
+
+#slide-2 .swiper-pagination-bullet {
+  opacity: .5; }
+
+#slide-2 .swiper-slide {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
+#slide-2 #gallery-thumbs {
+  max-height: 300px;
+  box-sizing: border-box;
+  padding: 10px 0; }
+  #slide-2 #gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center; }
+  #slide-2 #gallery-thumbs .swiper-slide-active {
+    opacity: 1; }
+
+#slide-2 .swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#slide-2 #gallery-top {
+  height: auto;
+  width: 100%; }
+  #slide-2 #gallery-top .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    height: 700px; }
+
+@media (max-width: 543px) {
+  #slide-2 .swiper-wrapper {
+    height: 300px !important; } }
 
 /** contato */
 #contatos .details {
@@ -659,26 +677,3 @@ footer {
       padding: 80px 0; }
       footer div {
         margin-bottom: 10px; } }
-
-.swiper-container {
-  width: 100%;
-  height: 100%; }
-
-.swiper-pagination-bullet {
-  opacity: .5; }
-
-.swiper-slide {
-  font-size: 18px;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center; }
