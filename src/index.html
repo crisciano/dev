@@ -32,8 +32,6 @@
 </head>
 <body>
 
-	<!-- include 'nav.php'; -->
-
 	<!-- header -->
 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="nav">
 		<div class="container">
@@ -160,6 +158,20 @@
 		</div>
 	</section>
 
+	<section id="img">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<img 
+						data-src="img/s1.jpg"
+						data-src-md="img/s1-md.jpg"
+						data-src-sm="img/s1-sm.jpg"
+						data-src-xs="img/s1-xs.jpg" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- separador --> 
 	<section class="overlay" id="separador">
 		<div class="container">
@@ -183,6 +195,45 @@
 	<section id="localizacao">
 		<div class="container">
 			<div class="row">
+			</div>
+		</div>
+	</section>
+
+	<!-- form -->
+	<section id="form">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<!-- <div class="col-lg-4  col-10 offset-1 offset-lg-4 pr-lg-5 brasao">
+					<img src="img/brasao-prf.png" alt="" class="img-fluid">
+				</div> -->
+				<div class="col-lg-4 offset-lg-8 pt-5 pb-5 form">
+					<div class="row">
+						<div class="col-10 offset-1">
+							<p class="ft-open-light">Deixe seu contato que nós retornaremos para tirar suas dúvidas e realizar sua matrícula. </p>
+							<form class="form-contato" data-success="Contato enviado com sucesso!!">
+								<input type="hidden" name="empresa" value="Dev">
+								<input type="hidden" name="email-empresa" value="cris@apeppers.com.br">
+								<input type="hidden" name="assunto" value="Contato">
+								<input type="hidden" name="resposta" value="1">
+								<input type="hidden" name="agradecimento" value="Agradecemos o seu contato. Em breve entraremos em contato...">
+								<div class="form-group">
+									<label class="text-uppercase ft-open-bold mb-0">Nome</label>
+									<input type="text" name="nome" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label class="text-uppercase ft-open-bold mb-0">Email</label>
+									<input type="email" name="email" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label class="text-uppercase ft-open-bold mb-0">telefone</label>
+									<input type="tel" name="telefone" id="phone" class="form-control" required>
+								</div>
+
+								<button type="submit" class="btn text-uppercase btn-form ft-open-bold mt-3">enviar</button>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

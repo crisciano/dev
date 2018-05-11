@@ -1,7 +1,34 @@
 $(function() {
     $("input[type=tel]").mask("(99) 9999-99999");
+    var d = document;
+    var img = d.querySelectorAll('[data-src]');
+    if(img) { src();}
     slide();
 });
+
+$(window).resize(function() {
+    var d = document;
+    var img = d.querySelectorAll('[data-src]');
+    if(img) { src();}
+});
+
+/** otimização de desenpenho nas imagens... **/
+function src(){
+    let w = window.innerWidth;
+    var d = document;
+    var img = d.querySelectorAll('[data-src]');
+    var currentSrc;
+    img.forEach((el, i)=>{
+        if(w<575.98) { currentSrc = img[i].getAttribute('data-src-xs'); }
+        if(w>576 && w<767.98) { currentSrc = img[i].getAttribute('data-src-sm'); }
+        if(w>768 && w<991.98) { currentSrc = img[i].getAttribute('data-src-md');}
+        if(w>992 && w<1199.98) { currentSrc = img[i].getAttribute('data-src'); }
+        if(w>1200) {  currentSrc = img[i].getAttribute('data-src');  }
+        if(currentSrc) el.setAttribute('src', currentSrc);
+    });
+}
+
+
 // Video Modals
 //$('section').closest('body').find('.local-video-container .play-button').click(function() {
 $('section').closest('body').find('.play-button').click(function() {
@@ -102,7 +129,7 @@ $('form.form-contato').submit(function(e){
     jQuery.ajax({
         type: "POST",
         dataType: 'html',
-        url: "php/send.php",
+        url: "http://crisciano.com.br/api/send.php",
         data: dados,
         success: function(data) {
             console.log(data);
