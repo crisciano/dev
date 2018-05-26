@@ -37,10 +37,10 @@ input[type=password],
 input[type=date], 
 textarea,
 select{
-	@include placeholder($cinza-escuro);  
+	// @include placeholder($cinza-escuro);  
 	background: transparent; 
 	border-radius: 0;
 	color: $branco;
     border: none;
-    border-bottom: 2px solid $cinza;
+    // border-bottom: 2px solid $cinza;
 }

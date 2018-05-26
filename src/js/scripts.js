@@ -1,16 +1,60 @@
 $(function() {
     $("input[type=tel]").mask("(99) 9999-99999");
-    var d = document;
-    var img = d.querySelectorAll('[data-src]');
-    if(img) { src();}
-    slide();
+    // var d = document;
+    // var img = d.querySelectorAll('[data-src]');
+    // if(img) { src();}
+    // slide();
 });
 
 $(window).resize(function() {
-    var d = document;
-    var img = d.querySelectorAll('[data-src]');
-    if(img) { src();}
+    // var d = document;
+    // var img = d.querySelectorAll('[data-src]');
+    // if(img) { src();}
 });
+
+// element .charts
+var d = document;
+var img = d.querySelector('.charts');
+
+img.addEventListener("click", (e) => {
+    var d = document;
+    var parentOffset = img.getBoundingClientRect();
+    // var relX = e.pageX - parentOffset.left;
+    // var relY = e.pageY - parentOffset.top;
+    var relX = e.clientX - parentOffset.left;
+    var relY = e.clientY - parentOffset.top;
+
+   var sp = d.createElement("span");
+   sp.innerHTML = "o";
+   sp.style.zIndex = "10000";
+   sp.style.position = "absolute";
+   // sp.style.padding = '10px';
+   sp.style.color = "red";
+   sp.style.left = `${relX}px`;
+   sp.style.top = `${relY}px`;
+
+   $('.img::after').height(`${relY}px`);
+
+   img.appendChild( sp );
+   console.log(sp);
+
+   // console.log(`${sp} - ${relX} - ${relY}`);
+    
+});
+
+/** layzload **/
+window.onscroll = function(){
+    var d       = document;
+    var w       = window;
+    var ww      = window.innerWidth;
+    var imgs    = d.querySelectorAll('img[data-src]');
+    if (imgs) {
+        imgs.forEach((el, i) => {
+            if( imgs[i].getBoundingClientRect().top < w.innerHeight + 200 ){ src(); }
+        });
+    }
+};
+
 
 /** otimização de desenpenho nas imagens... **/
 function src(){

@@ -65,7 +65,7 @@
 	transform: $effect;
 }
 
-@mixin transition($effect) {
+@mixin transition($effect: all 1s linear) {
 	-webkit-transition: $effect;
 	-ms-transition: $effect;
 	-moz-transition: $effect;
