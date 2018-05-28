@@ -2,6 +2,29 @@
 @import "mixins";
 
 
+.title{
+	color: $cinza-escuro;
+	position: relative;
+	margin-bottom: 3rem;
+	font-weight: bold;
+	&:after{
+		content: '';
+	    position: absolute;
+	    height: 5px;
+	    // background-color: $primary;
+	    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#57bf99+1,51abcc+100 */
+		background: #57bf99; /* Old browsers */
+		background: -moz-linear-gradient(left, #57bf99 1%, #51abcc 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, #57bf99 1%,#51abcc 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, #57bf99 1%,#51abcc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57bf99', endColorstr='#51abcc',GradientType=1 ); /* IE6-9 */
+	    left: 0px;
+	    width: 4.5rem;
+	    bottom: -10px;
+	}
+}
+
+
 #img{
 	.charts{
 		&:hover .img{
@@ -398,6 +421,9 @@
 	}
 }
 
+#form{ 
+
+}
 /** footer **/
 footer{
 	.pt-5{padding-top: 5px;}
