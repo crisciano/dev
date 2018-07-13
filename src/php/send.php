@@ -13,7 +13,7 @@ if ($_POST) {
 	$assunto 		= $_POST['assunto']; 
 	$empresa 		= $_POST['empresa'];
 	$nome 			= $_POST['nome']; 
-	$emailCliente	= $_POST['email'];
+	$email			= $_POST['email'];
 	$telefone 		= $_POST['telefone'];
 	$msg 			= $_POST['message'];
 	$agradecimento 	= $_POST['agradecimento'];
@@ -23,27 +23,27 @@ if ($_POST) {
 		<head>
 		</head>
 		<body>
-		<p>	Contato : '.$nome.' </br></p>
+		<p>	Nome : '.$nome.' </br></p>
 		<p>	Email : '.$email.' </br></p>
 		<p>	Telefone : <a href=tel:'.$tel.'>' .$telefone. '</a> </br></p>
-		<p> Mensagem: '. $msg. '</br></p>
 		</body>
 		</html>';
 }else{
 	echo "Sem parámetros para enviar o email...";
 }
 if ($resposta == true) {
-	sendEmail($emailEmpresa, $nome, $assunto, $corpo);
-	sendEmail($emailCliente, $empresa, $assunto, $agradecimento);
+	sendEmail($emailEmpresa, $email, $nome, $assunto, $corpo);
+	sendEmail($email, $emailEmpresa, $empresa, $assunto, $agradecimento);
 }else{
-	sendEmail($emailEmpresa, $empresa, $assunto, $corpo);
+	sendEmail($emailEmpresa, $email, $empresa, $assunto, $corpo);
 }
 
-function sendEmail(&$email, &$nome, &$assunto, &$corpo ){
+function sendEmail(&$dest, &$send, &$nome, &$assunto, &$corpo ){
 	$mail = new PHPMailer;
+	$mail->CharSet = 'UTF-8';
 	$mail->isSendmail();
-	$mail->setFrom($email, $nome);
-	$mail->addAddress($email, $nome);
+	$mail->setFrom($send, $nome);
+	$mail->addAddress($dest, $nome);
 	$mail->Subject = $assunto;
 	$mail->msgHTML($corpo);
 	$mail->AltBody = $assunto;

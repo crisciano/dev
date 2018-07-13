@@ -31,7 +31,7 @@ let pass          = '';                   /* pass para o ftp */
 let dirDist       = '/public_html/dist';  /* dir de teste*/
 let dirPublic     = '/public_html';       /*dir de dev */
 
-gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'copyJs', 'copyScss', 'build-img'], function() {
+gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'copyJs', 'copyScss', 'copyCss'], function() {
 	//gulp.start('build-img');
 });
 
@@ -46,7 +46,7 @@ gulp.task('copyPHP', function() {
 });
 
 gulp.task('copyFonts', function() {
-    return gulp.src('src/fonts/*')
+    return gulp.src('src/fonts/**/*')
         .pipe(gulp.dest('dist/fonts'));
 });
 
@@ -63,6 +63,11 @@ gulp.task('copyJs',function(){
 gulp.task('copyScss',function(){
   return gulp.src('src/sass/**/*')
         .pipe(gulp.dest('dist/sass'));
+});
+
+gulp.task('copyCss',function(){
+  return gulp.src('src/css/**/*')
+        .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('clean', function() {

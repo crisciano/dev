@@ -421,6 +421,65 @@
 	}
 }
 
+#teste{
+	padding: 0;
+	background: #777;
+	#example{
+		margin-bottom: 0;
+		.item{
+			border-radius: 0 50vh 50vh 0;
+			text-align: center;
+			padding: 0 15px;
+			width: auto;
+			height: 100vh;
+			flex-grow: 1;
+			transition: .5s;
+			background: #777;
+			display: flex;
+    		align-items: center;
+    		justify-content: flex-end;
+    		margin-left: -50vh;
+    		&:nth-of-type(1) {z-index: 6; margin-left: 0;}
+			&:nth-of-type(2) {z-index: 5;}
+			&:nth-of-type(3) {z-index: 4;}
+			&:nth-of-type(4) {z-index: 3;}
+			&:nth-of-type(5) {z-index: 2;}
+			&:nth-of-type(6) {z-index: 1;}
+    		@include shadow;
+			&:hover{
+				&:nth-of-type(1){ .name, .description{ width: 100%; } }
+				flex-direction: column;
+			    flex-grow: 2;
+			    max-width: 50%;
+			    background: green;
+			    align-self: center;
+			    justify-content: center;
+			    align-items: flex-end;
+			}
+			&:hover .description{
+				display: block;
+				// transform: rotate(0deg);
+			}
+			&:hover .name{
+				transform: rotate(0deg);
+			}
+			.name, .description{
+				color: #fff;
+				transition: .5s;
+			}
+			.name{
+				width: 50%;
+				margin-bottom: 0;
+				transform: rotate(90deg);
+			}
+			.description{
+				width: 50%;
+				display: none;
+			}
+		}
+	}
+}
+
 #form{ 
 
 }
@@ -434,5 +493,53 @@ footer{
 	@media #{$max-tablet}{
     	padding: 80px 0;
 		div{    margin-bottom: 10px;}
+	}
+}
+
+#menu-flutuante{
+    right: 15px;
+    left: auto;
+    height: 100%;
+    @include border(25em);
+    li{ 
+    	&:first-child{
+    		@include border( 25em 25em 0 0);
+
+    	}
+    	&:last-child{
+    		border-bottom: 0;
+    		@include border( 0 0 25em 25em);
+    	}
+    	// border-bottom: solid 1px $branco;
+    	padding: 15px;
+    	background: $primary;
+    	i{ color: $primary;}
+    }
+    @media #{$max-tablet} {
+    	display: none !important;
+    }
+}
+
+#menu-mobile{
+	background: $branco;
+	padding: 20px 0; 
+	@include shadow;
+	ul{ margin-bottom: 0;}
+	.btn-padrao{
+		padding: 5px 10px;
+		font-size: .8em;
+		background: $primary;
+		border: solid 2px $primary;
+		&:not(.orcamento){
+			background: $branco;
+			color: #09283F;
+			border: solid 2px #09283F;
+			// background: transparent;
+		}
+		@media #{$max-tablet} {
+			padding: 5px 8px;
+			font-size: .75em;
+			
+		}
 	}
 }

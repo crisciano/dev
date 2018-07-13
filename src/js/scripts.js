@@ -43,11 +43,17 @@ var img = d.querySelector('.charts');
 // });
 
 /** layzload **/
+var debounce = false;
 window.onscroll = function(){
     var d       = document;
     var w       = window;
     var ww      = window.innerWidth;
     var imgs    = d.querySelectorAll('img[data-src]');
+
+    if (debounce) return;
+    debounce = true;
+    setTimeout(() => debounce = false, 100);
+
     if (imgs) {
         imgs.forEach((el, i) => {
             if( imgs[i].getBoundingClientRect().top < w.innerHeight + 200 ){ src(); }

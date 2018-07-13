@@ -24,10 +24,14 @@ a:hover{ color: $primary-lighten}
 button{ cursor: pointer; }
 
 /*remove box-shadow input*/
-input[type=text], input[type=tel], input[type=email], textarea, button, .btn:focus, .btn.focus, .btn-primary:focus, .btn-primary.focus { background-image: none; outline: 0; -webkit-box-shadow: none; box-shadow: none; }
+input[type=text], input[type=tel], input[type=email], textarea, button, .btn:focus, .btn.focus, .btn-primary:focus, .btn-primary.focus, .navbar-toggler:focus { background-image: none; outline: 0; -webkit-box-shadow: none; box-shadow: none; }
 
 /* custom css */
 .overlay:after { background: rgba($primary, .5); position: absolute; content: ""; top: 0; left: 0; width: 100%; height: 100%; }
+
+.fake-parallax{
+	background-attachment: fixed;
+}
 
 input[type=text], 
 input[type=tel], 

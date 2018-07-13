@@ -58,6 +58,15 @@
 	position: relative;
 }
 
+@mixin bg-parallax($dir, $url) {
+	background: url($dir+$url);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	position: relative;
+	background-attachment: fixed;
+}
+
 @mixin transform($effect) {
 	-webkit-transform: $effect;
 	-ms-transform: $effect;   
