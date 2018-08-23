@@ -23,6 +23,7 @@ var gulp = require('gulp')
   ,webserver      = require('gulp-webserver')
   ,mkdir          = require('mkdirp')
   ,gutil          = require('gulp-util')
+  ,svgmin         = require('gulp-svgmin')
   ,ftp            = require('gulp-ftp');
 
 let host          = '';                   /* host para o ftp */
@@ -32,12 +33,13 @@ let dirDist       = '/public_html/dist';  /* dir de teste*/
 let dirPublic     = '/public_html';       /*dir de dev */
 
 gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'copyJs', 'copyScss', 'copyCss'], function() {
-	//gulp.start('build-img');
+  gulp.start('build-img');
+  gulp.start('build-svg');
 });
 
 gulp.task('copy', ['clean'], function() {
-	return gulp.src('src/**/*')
-		.pipe(gulp.dest('dist'));
+  return gulp.src('src/**/*')
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('copyPHP', function() {
@@ -71,13 +73,19 @@ gulp.task('copyCss',function(){
 });
 
 gulp.task('clean', function() {
-	return gulp.src('dist')
-		.pipe(clean());
+  return gulp.src('dist')
+    .pipe(clean());
+});
+
+gulp.task('build-svg', function () {
+    return gulp.src('src/img/**/*.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('build-img', function() {
 
-  return gulp.src('src/img/**/*')
+  return gulp.src('src/img/**/*.{png,jpg,jpeg}')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [

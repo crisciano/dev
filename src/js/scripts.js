@@ -190,7 +190,7 @@ $('form.form-contato').submit(function(e){
     jQuery.ajax({
         type: "POST",
         dataType: 'html',
-        url: "http://crisciano.com.br/api/send.php",
+        url: "js/send.php",
         data: dados,
         success: function(data) {
             console.log(data);
