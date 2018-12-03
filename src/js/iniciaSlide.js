@@ -1,6 +1,25 @@
 $(function() {
+    var swiper = new Swiper('#teste', {
+        // effect: 'fade',
+        pagination: {
+            el: '#pgteste',
+            type: 'progressbar',
+        },
+        navigation: {
+          nextEl: '#nextteste',
+          prevEl: '#prevteste',
+        },
+        slidesPerView: 1,
+        loop: true,
+        // autoplay: {
+        //   delay: 5000,
+        // },
+    });
+
+
+
     var swiper = new Swiper('#slideDepoimentos', {
-        pagination: '.swiper-pagination',
+        pagination: '#slideDepoimentosPagination',
         paginationClickable: true,
         speed: 300,
         loop: true,
@@ -9,8 +28,8 @@ $(function() {
     });
 
     var galleryTop = new Swiper('#gallery-top', {
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        // nextButton: '.swiper-button-next',
+        // prevButton: '.swiper-button-prev',
         spaceBetween: 10,
     });
     var galleryThumbs = new Swiper('#gallery-thumbs', {

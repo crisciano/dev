@@ -32,9 +32,9 @@ let pass          = '';                   /* pass para o ftp */
 let dirDist       = '/public_html/dist';  /* dir de teste*/
 let dirPublic     = '/public_html';       /*dir de dev */
 
-gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'copyJs', 'copyScss', 'copyCss'], function() {
+gulp.task('default', ['useref','copyPHP', 'copyFonts', 'copyVideo', 'copyJs', 'copyScss', 'copyCss', 'seo'], function() {
   gulp.start('build-img');
-  gulp.start('build-svg');
+  // gulp.start('build-svg');
 });
 
 gulp.task('copy', ['clean'], function() {
@@ -68,13 +68,19 @@ gulp.task('copyScss',function(){
 });
 
 gulp.task('copyCss',function(){
-  return gulp.src('src/css/**/*')
-        .pipe(gulp.dest('dist/css'));
+  return gulp.src('src/css/**/*.css')
+    .pipe(cssnano())
+    .pipe(gulp.dest('dist/css'))
 });
 
 gulp.task('clean', function() {
   return gulp.src('dist')
     .pipe(clean());
+});
+
+gulp.task('seo',function(){
+  return gulp.src('src/seo/**/*')
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build-svg', function () {
@@ -93,6 +99,7 @@ gulp.task('build-img', function() {
                 {cleanupIDs: false}
             ]
         }))
+        // vJyGDhoFt93pai7bNOlLnt9wx35GfClT
         .pipe(tinypng('2fTBYUG9ROnvcw5jclwjWsXP8n2SF_-Z'))
         .pipe(gulp.dest('dist/img'));
 });
