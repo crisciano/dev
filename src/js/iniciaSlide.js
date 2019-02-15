@@ -1,4 +1,4 @@
-$(function() {
+// $(function() {
     var swiper = new Swiper('#teste', {
         // effect: 'fade',
         pagination: {
@@ -41,4 +41,4 @@ $(function() {
     });
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
-});
+// });

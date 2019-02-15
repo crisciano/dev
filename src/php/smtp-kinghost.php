@@ -40,9 +40,11 @@ require 'PHPMailerAutoload.php';
 $mail = new PHPMailer();
 $mail->IsSMTP();
 // $mail->SMTPDebug = 0;
-$mail->Port = 587;
 $mail->Host = "smtp.uni5.net";
 $mail->SMTPAuth = true;
+$mail->Port = 587;
+$mail->SMTPSecure = false;
+$mail->SMTPAutoTLS = false; 
 $mail->Username = 'email@example.com.br';
 $mail->Password = 'pass';
 
